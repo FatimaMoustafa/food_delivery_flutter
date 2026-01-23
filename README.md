@@ -1,16 +1,81 @@
-# ecommerce_app_food_delivery
+# Food Delivery App (Flutter)
 
-A new Flutter project.
+A **Food Delivery Mobile Application** built with **Flutter**, designed to demonstrate clean UI, real-world app features, and professional Flutter development practices. This project is part of my portfolio as a **Junior Flutter Developer**.
+
+---
+
+## App Overview
+
+The application allows users to browse food items, view details, add products to the cart, and prepare orders smoothly. The project follows a scalable structure and is being developed incrementally with new features added over time.
+
+---
+
+## Features
+
+### Implemented Features
+
+* Clean & responsive UI using Flutter
+* Home screen with food categories
+* Food items listing
+* Product details screen
+* Add to cart functionality
+* Organized project structure
+
+### Planned Features
+
+* User authentication (Firebase)
+* Order checkout & payment flow
+* Order history
+* Real-time order tracking
+* Push notifications
+* Dark mode support
+
+---
+
+## Technologies & Tools
+
+* **Flutter (Dart)**
+* Flutter (Dart)
+* REST APIs
+* Firebase (planned)
+* Git & GitHub
+* GetX (State Management, Dependency Injection, Navigation)
+* MVC / Clean Architecture principles
+
+---
+
+## Screenshots
+
+> Screenshots will be added soon to showcase the app UI.
+
+---
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+* Flutter SDK
+* Android Studio or VS Code
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Run the project
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+flutter run
+```
+
+---
+
+## Project Status
+
+ **In Progress** – actively being developed and improved.
+
+---
+
+
+## **Fatma Mostafa**
+Junior Flutter Developer
+
+* GitHub: [https://github.com/FatimaMoustafa](https://github.com/FatimaMoustafa)
+* LinkedIn: [https://www.linkedin.com/in/fatma-mostafa-5545622ab](https://www.linkedin.com/in/fatma-mostafa-5545622ab)
+
