@@ -16,10 +16,15 @@ The application allows users to browse food items, view details, add products to
 
 * Clean & responsive UI using Flutter
 * Home screen with food categories
-* Food items listing
 * Product details screen
-* Add to cart functionality
-* Organized project structure
+* Food items listing & details screens
+* Cart functionality with quantity management
+* Persistent cart using SharedPreferences
+* Cart history per order
+* Bottom navigation bar
+* Animated splash screen
+* Routing & navigation using GetX
+* Organized and scalable project structure
 
 ### Planned Features
 
@@ -34,13 +39,13 @@ The application allows users to browse food items, view details, add products to
 
 ## Technologies & Tools
 
-* **Flutter (Dart)**
 * Flutter (Dart)
 * REST APIs
 * Firebase (planned)
 * Git & GitHub
 * GetX (State Management, Dependency Injection, Navigation)
 * MVC / Clean Architecture principles
+* Git & GitHub
 
 ---
 
