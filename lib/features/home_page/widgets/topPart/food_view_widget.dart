@@ -1,11 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_app_food_delivery/controllers/popular_product_controller.dart';
 import 'package:ecommerce_app_food_delivery/core/routing/app_routes.dart';
-import 'package:ecommerce_app_food_delivery/core/routing/router_generation_config.dart';
 import 'package:ecommerce_app_food_delivery/core/styling/app_colors.dart';
-import 'package:ecommerce_app_food_delivery/features/food_page/food_details_screen.dart';
 import 'package:ecommerce_app_food_delivery/features/home_page/widgets/topPart/food_view_item.dart';
-import 'package:ecommerce_app_food_delivery/models/popular_products_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';

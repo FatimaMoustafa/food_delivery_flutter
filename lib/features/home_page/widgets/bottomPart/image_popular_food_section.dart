@@ -3,7 +3,6 @@ import 'package:ecommerce_app_food_delivery/core/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/styling/app_assets.dart';
 import '../../../../core/styling/app_colors.dart';
 
 class ImagePopularFoodSection extends StatelessWidget {

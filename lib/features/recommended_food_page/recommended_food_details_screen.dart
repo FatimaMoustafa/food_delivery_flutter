@@ -60,7 +60,7 @@ class RecommendedFoodDetailsScreen extends StatelessWidget {
                                 );
                               },
                               icon: Icons.circle,
-                              size: 18.sp,
+                              size: 20.sp,
                               iconColor: Colors.transparent,
                               buttonColor: AppColors.primaryColor,
                             ),
@@ -68,7 +68,7 @@ class RecommendedFoodDetailsScreen extends StatelessWidget {
                           Container(),
                           Get.find<PopularProductController>().totalItems >= 1 ?
                           Positioned(
-                              right: 6,
+                              right: 4,
                               top: 2,
                               child: Text(
                                 Get.find<PopularProductController>().totalItems.toString(),

@@ -1,5 +1,4 @@
 import 'package:ecommerce_app_food_delivery/controllers/cart_controller.dart';
-import 'package:ecommerce_app_food_delivery/core/styling/app_colors.dart';
 import 'package:ecommerce_app_food_delivery/core/widgets/show_snackbar.dart';
 import 'package:ecommerce_app_food_delivery/helper/data/repository/popular_product_repo.dart';
 import 'package:ecommerce_app_food_delivery/models/cart_model.dart';
@@ -86,7 +85,7 @@ class PopularProductController extends GetxController{
     _cart = cart;
     var exist = false;
     exist = _cart.existInCart(product);
-    print("exist or not  ${exist.toString()}");
+    print("exist or not? ${exist.toString()}");
     if(exist){
       _inCartItems = cart.getQuantity(product);
     }

@@ -1,6 +1,5 @@
 import 'package:ecommerce_app_food_delivery/controllers/cart_controller.dart';
 import 'package:ecommerce_app_food_delivery/controllers/popular_product_controller.dart';
-import 'package:ecommerce_app_food_delivery/core/styling/app_assets.dart';
 import 'package:ecommerce_app_food_delivery/core/styling/app_colors.dart';
 import 'package:ecommerce_app_food_delivery/core/widgets/food_icon_button_widget.dart';
 import 'package:ecommerce_app_food_delivery/core/widgets/food_main_details.dart';
@@ -93,7 +92,7 @@ class FoodDetailsScreen extends StatelessWidget {
                                   );
                                 },
                                 icon: Icons.circle,
-                                size: 18.sp,
+                                size: 20.sp,
                                 iconColor: Colors.transparent,
                                 buttonColor: AppColors.primaryColor,
                               ),
@@ -101,7 +100,7 @@ class FoodDetailsScreen extends StatelessWidget {
                              Container(),
                         Get.find<PopularProductController>().totalItems >= 1 ?
                         Positioned(
-                          right: 6,
+                          right: 3,
                           top: 2,
                           child: Text(
                             Get.find<PopularProductController>().totalItems.toString(),

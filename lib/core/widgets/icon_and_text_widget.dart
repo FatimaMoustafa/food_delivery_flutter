@@ -1,5 +1,4 @@
 import 'package:ecommerce_app_food_delivery/core/styling/app_styles.dart';
-import 'package:ecommerce_app_food_delivery/core/widgets/spacing_widget.dart';
 import 'package:flutter/material.dart';
 class IconAndTextWidget extends StatelessWidget {
   final IconData icon;

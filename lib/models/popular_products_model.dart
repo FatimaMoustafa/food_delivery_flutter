@@ -19,7 +19,7 @@ class PopularProductsModel{
     if (json['products'] != null) {
       _products = <ProductModel>[];
       json['products'].forEach((v) {
-        _products.add(new ProductModel.fromJson(v));
+        _products.add(ProductModel.fromJson(v));
       });
     }
   }
@@ -63,5 +63,16 @@ class ProductModel {
     typeId = json['type_id'];
   }
 
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'description': description,
+      'price': price,
+      'img': img,
+      'stars': stars,
+      'type_id': typeId,
+    };
+  }
 
 }

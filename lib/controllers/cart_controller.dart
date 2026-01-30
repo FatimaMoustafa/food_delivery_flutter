@@ -1,8 +1,10 @@
+import 'package:ecommerce_app_food_delivery/core/styling/app_assets.dart';
+import 'package:ecommerce_app_food_delivery/core/styling/app_colors.dart';
 import 'package:ecommerce_app_food_delivery/helper/data/repository/cart_repo.dart';
 import 'package:ecommerce_app_food_delivery/models/popular_products_model.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../core/widgets/show_snackbar.dart';
 import '../models/cart_model.dart';
 
 class CartController extends GetxController{
@@ -11,6 +13,8 @@ class CartController extends GetxController{
 
   Map<int, CartModel> _items={};
   Map<int, CartModel> get items => _items;
+
+  List<CartModel> storageItems = [];
   
   void addItem(ProductModel product, int quantity){
     var totalQuantity = 0;
@@ -32,6 +36,7 @@ class CartController extends GetxController{
           quantity: value.quantity! + quantity,
           isExist: true,
           time: DateTime.now().toString(),
+          product: product,
         );
       });
       if(totalQuantity <=0){
@@ -48,9 +53,16 @@ class CartController extends GetxController{
             quantity: quantity,
             isExist: true,
             time: DateTime.now().toString(),
+            product: product,
           );
         });
       }else{
+        Get.snackbar(
+            "Item count",
+            "You should at least add an item in the cart !",
+          backgroundColor: AppColors.primaryColor,
+          colorText: Colors.white,
+        );
         // SnackHelper.show(
         //   context,
         //   title: "Item count",
@@ -58,7 +70,8 @@ class CartController extends GetxController{
         // );
       }
     }
-
+    cartRepo.addToCartList(getItems);
+    update();
     }
 
   bool existInCart(ProductModel product){
@@ -95,4 +108,37 @@ class CartController extends GetxController{
     }).toList();
   }
 
-}
+  int get totalAmount{
+    var total=0;
+    _items.forEach((key, value){
+      total += value.quantity! * value.price!;
+    });
+    return total;
+  }
+
+  List<CartModel> getCartData(){
+    setCart = cartRepo.getCartList();
+    return storageItems;
+  }
+
+  set setCart(List<CartModel> items){
+    storageItems = items;
+    print("length of cart items: ${storageItems.length.toString()}");
+    for(int i = 0; i< storageItems.length; i++){
+      _items.putIfAbsent(
+        storageItems[i].product!.id!,
+          () => storageItems[i]
+      );
+    }
+  }
+
+  void addToHistory(){
+    cartRepo.addToCartHistoryList();
+    clear();
+  }
+
+  void clear(){
+    _items = {};
+    update();
+    }
+  }
