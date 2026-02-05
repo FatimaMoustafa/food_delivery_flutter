@@ -1,4 +1,5 @@
 import 'package:ecommerce_app_food_delivery/core/styling/app_colors.dart';
+import 'package:ecommerce_app_food_delivery/features/cart_page/cart_history_screen.dart';
 import 'package:ecommerce_app_food_delivery/features/home_page/home_page_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +34,8 @@ class _MainPageState extends State<MainPage> {
     return [
       HomePageScreen(),
       Container(child: Center(child: Text("Next page"),),),
+      CartHistoryScreen(),
       Container(child: Center(child: Text("Next Next page"),),),
-      Container(child: Center(child: Text("Next Next Next page"),),),
 
     ];
   }

@@ -1,10 +1,8 @@
-import 'package:ecommerce_app_food_delivery/core/styling/app_assets.dart';
 import 'package:ecommerce_app_food_delivery/core/styling/app_colors.dart';
 import 'package:ecommerce_app_food_delivery/helper/data/repository/cart_repo.dart';
 import 'package:ecommerce_app_food_delivery/models/popular_products_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../models/cart_model.dart';
 
 class CartController extends GetxController{
@@ -15,7 +13,9 @@ class CartController extends GetxController{
   Map<int, CartModel> get items => _items;
 
   List<CartModel> storageItems = [];
-  
+
+  var cartHistory = <CartModel>[].obs;
+
   void addItem(ProductModel product, int quantity){
     var totalQuantity = 0;
     // print("Length of the items is: ${_items.length}");
@@ -134,6 +134,7 @@ class CartController extends GetxController{
 
   void addToHistory(){
     cartRepo.addToCartHistoryList();
+    cartHistory.value = cartRepo.getCartHistoryList();
     clear();
   }
 
@@ -141,4 +142,20 @@ class CartController extends GetxController{
     _items = {};
     update();
     }
+
+  List<CartModel> getCartHistoryList(){
+    // cartHistory.value = cartRepo.getCartHistoryList();
+    return cartRepo.getCartHistoryList();
   }
+
+  set setItems(Map<int, CartModel> setItems){
+    _items = {};
+    _items = setItems;
+  }
+
+  void addToCartList(){
+    cartRepo.addToCartList(getItems);
+    update();
+  }
+
+}

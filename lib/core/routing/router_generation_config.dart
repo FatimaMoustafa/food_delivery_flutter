@@ -1,3 +1,4 @@
+import 'package:ecommerce_app_food_delivery/features/cart_page/cart_history_screen.dart';
 import 'package:ecommerce_app_food_delivery/features/cart_page/cart_screen.dart';
 import 'package:ecommerce_app_food_delivery/features/food_page/food_details_screen.dart';
 import 'package:ecommerce_app_food_delivery/features/home_page/home_page_screen.dart';
@@ -58,6 +59,11 @@ class RouterGenerationConfig {
             path: AppRoutes.cartScreen,
             name: AppRoutes.cartScreen,
             builder: (context, state) => const CartScreen()
+        ),
+        GoRoute(
+            path: AppRoutes.cartHistoryScreen,
+            name: AppRoutes.cartHistoryScreen,
+            builder: (context, state) => const CartHistoryScreen()
         ),
       ]
   );

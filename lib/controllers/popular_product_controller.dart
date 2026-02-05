@@ -44,8 +44,7 @@ class PopularProductController extends GetxController{
       print("increment");
       _quantity = checkQuantity(_quantity+1);
       if((_inCartItems+quantity) >= 50){
-        SnackHelper.show(
-          context,
+        ShowSnackbar.show(
           title: "Item count",
           message: "You can't add more !",
         );
@@ -54,8 +53,7 @@ class PopularProductController extends GetxController{
       _quantity= checkQuantity(_quantity-1);
       print("decrement");
       if((_inCartItems+quantity)<0){
-        SnackHelper.show(
-          context ,
+        ShowSnackbar.show(
           title: "Item count",
           message: "You can't reduce more !",
         );

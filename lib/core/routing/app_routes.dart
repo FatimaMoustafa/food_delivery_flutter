@@ -5,7 +5,9 @@ class AppRoutes{
   static const String recommendedFoodDetailsScreen = '/recommendedFoodDetailsScreen';
   static const String cartScreen = '/cartScreen';
   static const String splashScreen = '/splashScreen';
-  // static const String verifyOtpScreen = '/verifyOtpScreen';
+  static const String cartHistoryScreen = '/cartHistoryScreen';
+
+// static const String verifyOtpScreen = '/verifyOtpScreen';
   // static const String createNewPasswordScreen = '/createNewPasswordScreen';
   // static const String passwordChangedScreen = '/passwordChangedScreen';
   // static const String mainScreen = '/mainScreen';

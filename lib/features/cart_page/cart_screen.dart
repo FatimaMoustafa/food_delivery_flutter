@@ -4,6 +4,7 @@ import 'package:ecommerce_app_food_delivery/core/routing/app_routes.dart';
 import 'package:ecommerce_app_food_delivery/core/styling/app_styles.dart';
 import 'package:ecommerce_app_food_delivery/core/utils/app_constants.dart';
 import 'package:ecommerce_app_food_delivery/core/widgets/food_icon_button_widget.dart';
+import 'package:ecommerce_app_food_delivery/core/widgets/show_snackbar.dart';
 import 'package:ecommerce_app_food_delivery/core/widgets/spacing_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,13 +40,9 @@ class CartScreen extends StatelessWidget {
                 ),
                 WidthSpace(width: 80),
                 FoodIconButtonWidget(
-                  // onPress: (){
-                  //   GoRouter.of(context).pop();
-                  // },
                   onPress: () {
-                    while (GoRouter.of(context).canPop()) {
-                      GoRouter.of(context).pop();
-                    }
+                    context.goNamed(AppRoutes.mainPage);
+                    // context.go(AppRoutes.mainPage);
                   },
                   icon: Icons.home_outlined,
                   iconColor: AppColors.whiteColor,
@@ -77,6 +74,11 @@ class CartScreen extends StatelessWidget {
                 child: GetBuilder<CartController>(
                   builder: (cartController){
                     var cartList = cartController.getItems;
+
+                    if (cartList.isEmpty) {
+                      return const Center(child: Text("No cart history yet"));
+                    }
+
                     return ListView.builder(
                         itemCount: cartList.length,
                         itemBuilder: (_, index){
@@ -99,13 +101,20 @@ class CartScreen extends StatelessWidget {
                                     }else{
                                       var recommendedIndex = Get.find<RecommendedProductController>()
                                           .recommendedProductList.indexOf(product);
-                                      GoRouter.of(context).push(
+                                      if(recommendedIndex<0){
+                                        ShowSnackbar.show(
+                                          title: "History product",
+                                          message: "Product review is not available for history products"
+                                        );
+                                      }else{
+                                        GoRouter.of(context).push(
                                           AppRoutes.recommendedFoodDetailsScreen,
                                           extra: [
                                             Get.find<RecommendedProductController>(),
                                             recommendedIndex
                                           ],
-                                      );
+                                        );
+                                      }
                                     }
                                   },
                                   child: Container(

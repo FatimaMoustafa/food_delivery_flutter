@@ -59,12 +59,12 @@ class AppStyles{
   //   color: AppColors.neutralWhiteColor,
   //   fontWeight: FontWeight.w700
   // );
-  // static TextStyle neutralWhite15w500Style = TextStyle(
-  //     fontFamily: AppFonts.mainFont,
-  //     fontSize: 15,
-  //     color: AppColors.neutralWhiteColor,
-  //     fontWeight: FontWeight.w500
-  // );
+  static TextStyle black15w500Style = TextStyle(
+      fontFamily: AppFonts.mainFont,
+      fontSize: 15,
+      color: AppColors.blackColor,
+      fontWeight: FontWeight.w500
+  );
   static TextStyle white24w600Style = TextStyle(
       fontFamily: AppFonts.mainFont,
       fontSize: 24,
